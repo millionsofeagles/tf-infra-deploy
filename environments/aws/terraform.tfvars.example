@@ -1,0 +1,33 @@
+project_name = "customer-pentest"
+environment  = "test"
+aws_region   = "us-east-1"
+
+vpc_cidr            = "10.0.0.0/16"
+public_subnet_cidr  = "10.0.1.0/24"
+private_subnet_cidr = "10.0.2.0/24"
+
+# Replace with your actual IP addresses
+allowed_ssh_ips = ["YOUR_IP_HERE/32"]
+allowed_rdp_ips = ["YOUR_IP_HERE/32"]
+
+# Replace with your actual SSH public key
+ssh_public_key = "ssh-rsa AAAAB3NzaC1... your-key-here"
+
+# Kali Linux Configuration
+kali_instance_type = "t3.medium"
+tester_count      = 3  # Number of Kali instances for multiple testers
+
+# VPN Gateway Configuration (set to true to enable)
+enable_vpn_gateway = false
+
+# Windows Server for compatibility testing (set to true to enable)
+enable_windows_server    = false
+windows_admin_password   = "ComplexP@ssw0rd123!"  # Change this!
+windows_server_count     = 1
+
+tags = {
+  Customer    = "CustomerName"
+  Project     = "Penetration Testing"
+  Environment = "Testing"
+  ManagedBy   = "Terraform"
+}

@@ -1,0 +1,24 @@
+project_name          = "customer-pentest"
+environment           = "test"
+azure_location        = "eastus"
+azure_subscription_id = "YOUR-SUBSCRIPTION-ID-HERE"
+
+vpc_cidr            = "10.0.0.0/16"
+public_subnet_cidr  = "10.0.1.0/24"
+private_subnet_cidr = "10.0.2.0/24"
+
+# Replace with your actual IP addresses
+allowed_ssh_ips = ["YOUR_IP_HERE/32"]
+allowed_rdp_ips = ["YOUR_IP_HERE/32"]
+
+# Replace with your actual SSH public key
+ssh_public_key = "ssh-rsa AAAAB3NzaC1... your-key-here"
+
+kali_vm_size = "Standard_B2s"
+
+tags = {
+  Customer    = "CustomerName"
+  Project     = "Penetration Testing"
+  Environment = "Testing"
+  ManagedBy   = "Terraform"
+}
